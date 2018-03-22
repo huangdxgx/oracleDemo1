@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="oracleDemo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="oracleDemo.war">
+      <element id="artifact" artifact-name="oracleDemo:war exploded" />
+    </root>
+  </artifact>
+</component>

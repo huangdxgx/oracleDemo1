@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dongxi.software.dao.mapper.IAddrDao">
+  <resultMap id="BaseResultMap" type="com.dongxi.software.entity.Addr">
+    <result column="A" jdbcType="VARCHAR" property="a" />
+    <result column="B" jdbcType="VARCHAR" property="b" />
+    <result column="C" jdbcType="VARCHAR" property="c" />
+  </resultMap>
+  <insert id="insert" parameterType="com.dongxi.software.entity.Addr">
+    insert into TEST_S (A, B, C)
+    values (#{a,jdbcType=VARCHAR}, #{b,jdbcType=VARCHAR}, #{c,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dongxi.software.entity.Addr">
+    insert into TEST_S
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="a != null">
+        A,
+      </if>
+      <if test="b != null">
+        B,
+      </if>
+      <if test="c != null">
+        C,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="a != null">
+        #{a,jdbcType=VARCHAR},
+      </if>
+      <if test="b != null">
+        #{b,jdbcType=VARCHAR},
+      </if>
+      <if test="c != null">
+        #{c,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
