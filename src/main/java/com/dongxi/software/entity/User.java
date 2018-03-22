@@ -1,7 +1,7 @@
 package com.dongxi.software.entity;
 
 public class User {
-    private String userId;
+    private String userId;//用户id
 
     private String userName;
 
